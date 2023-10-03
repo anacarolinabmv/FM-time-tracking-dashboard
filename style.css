@@ -52,6 +52,53 @@ div {
   background-repeat: no-repeat;
   background-position: top -8px right 20px;
   border-radius: 1.6rem 1.6rem 0 0;
+  height: 6rem;
+}
+
+.card__text {
+  padding: 3rem;
+  color: #fff;
+  border-radius: 16px;
+  background-color: var(--Dark-blue);
+  transform: translateY(-1.5rem);
+}
+.card__more {
+  background-color: var(--Pale-Blue);
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  -webkit-mask-image: url(images/icon-ellipsis.svg);
+  mask-image: url(images/icon-ellipsis.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+}
+
+.card__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__time {
+  font-size: 5.6rem;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 2.4rem;
+}
+.card__total {
+  color: var(--Pale-Blue);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 1rem;
 }
 .card-activities--orange .card__image {
   background-image: url(images/icon-work.svg);
@@ -76,53 +123,4 @@ div {
 .card-activities--yellow .card__image {
   background-image: url(images/icon-self-care.svg);
   background-color: var(--Yellow);
-}
-
-.card__image {
-  height: 6rem;
-}
-.card__text {
-  padding: 3rem;
-  color: #fff;
-  border-radius: 16px;
-  background-color: var(--Dark-blue);
-  transform: translateY(-1.5rem);
-}
-.card__more {
-  background-color: var(--Pale-Blue);
-  display: inline-block;
-  height: 2rem;
-  width: 2rem;
-  -webkit-mask-image: url(images/icon-ellipsis.svg);
-  mask-image: url(images/icon-ellipsis.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-}
-
-.card__activity {
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: normal;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.card__time {
-  font-size: 5.6rem;
-  font-weight: 300;
-  line-height: normal;
-  margin-top: 2.4rem;
-}
-.card__total {
-  color: var(--Pale-Blue);
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 1rem;
 }
