@@ -45,24 +45,77 @@ div {
 }
 .card-person {
   grid-row: 1/-1;
-  background-color: var(--Desaturated-blue);
-  padding: 3rem;
 }
-.card__image {
+.card-person__info {
+  height: 35.4rem;
+  background-color: var(--Blue);
+  padding: 3.2rem;
+  border-radius: 1.5rem;
+  z-index: 99;
+  position: relative;
+}
+
+.card-person__name {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: normal;
+}
+.card-person__report {
+  color: var(--Pale-Blue);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-person__picture {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1rem 2rem rgb(51, 51, 51, 0.15);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.card-person__timeframes {
+  background-color: var(--Dark-blue);
+  height: 17rem;
+  transform: translateY(-1rem);
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 3.2rem;
+}
+
+.timeframes__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2.1rem;
+  height: 100%;
+  list-style: none;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+}
+.timeframes__list-link:link,
+.timeframes__list-link:visited {
+  color: var(--Pale-Blue);
+  text-decoration: none;
+}
+.card-activity__image {
   background-repeat: no-repeat;
   background-position: top -8px right 20px;
-  border-radius: 1.6rem 1.6rem 0 0;
+  border-radius: 1.5rem 1.5rem 0 0;
   height: 6rem;
 }
 
-.card__text {
+.card-activity__text {
   padding: 3rem;
   color: #fff;
-  border-radius: 16px;
+  border-radius: 1.5rem;
   background-color: var(--Dark-blue);
   transform: translateY(-1.5rem);
 }
-.card__more {
+.card-activity__more {
   background-color: var(--Pale-Blue);
   display: inline-block;
   height: 2rem;
@@ -78,7 +131,7 @@ div {
   cursor: pointer;
 }
 
-.card__title {
+.card-activity__title {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: normal;
@@ -87,40 +140,40 @@ div {
   align-items: center;
   justify-content: space-between;
 }
-.card__time {
+.card-activity__time {
   font-size: 5.6rem;
   font-weight: 300;
   line-height: normal;
   margin-top: 2.4rem;
 }
-.card__total {
+.card-activity__total {
   color: var(--Pale-Blue);
   font-size: 1.5rem;
   font-weight: 400;
   line-height: normal;
   margin-top: 1rem;
 }
-.card-activities--orange .card__image {
+.card-activity--orange .card-activity__image {
   background-image: url(images/icon-work.svg);
   background-color: var(--Soft-orange);
 }
-.card-activities--blue .card__image {
+.card-activity--blue .card-activity__image {
   background-image: url(images/icon-play.svg);
   background-color: var(--Soft-blue);
 }
-.card-activities--red .card__image {
+.card-activity--red .card-activity__image {
   background-image: url(images/icon-study.svg);
   background-color: var(--Light-red);
 }
-.card-activities--green .card__image {
+.card-activity--green .card-activity__image {
   background-image: url(images/icon-exercise.svg);
   background-color: var(--Lime-green);
 }
-.card-activities--purple .card__image {
+.card-activity--purple .card-activity__image {
   background-image: url(images/icon-social.svg);
   background-color: var(--Violet);
 }
-.card-activities--yellow .card__image {
+.card-activity--yellow .card-activity__image {
   background-image: url(images/icon-self-care.svg);
   background-color: var(--Yellow);
 }
