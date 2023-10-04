@@ -41,7 +41,7 @@ const getData = async function () {
   return await response.json();
 };
 
-const renderTimeframes = async function (timeframe, name) {
+const displayTimeframeData = async function (timeframe, name) {
   const timeframeName = document.querySelectorAll('.timeframe');
   const currentTime = document.querySelectorAll('.card-activity__current span');
   const previousTime = document.querySelectorAll('.card-activity__previous .total');
@@ -60,7 +60,7 @@ const renderTimeframes = async function (timeframe, name) {
     console.log('Data not found');
   }
 };
-renderTimeframes('daily', 'Yesterday');
+displayTimeframeData('daily', 'Yesterday');
 
 //Event Listeners
 
@@ -71,7 +71,7 @@ btnsContainer.addEventListener('click', (e) => {
 
   e.target.classList.add('btn--active');
 
-  if (e.target.id === 'daily') renderTimeframes('daily', 'Yesterday');
-  if (e.target.id === 'weekly') renderTimeframes('weekly', 'Last Week');
-  if (e.target.id === 'monthly') renderTimeframes('monthly', 'Last Month');
+  if (e.target.id === 'daily') displayTimeframeData('daily', 'Yesterday');
+  if (e.target.id === 'weekly') displayTimeframeData('weekly', 'Last Week');
+  if (e.target.id === 'monthly') displayTimeframeData('monthly', 'Last Month');
 });
