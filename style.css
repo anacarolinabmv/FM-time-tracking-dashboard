@@ -252,8 +252,8 @@ body {
 @media (max-width: 43.75em /*700px*/) {
   .cards-container {
     grid-template-rows: max-content;
-    grid-template-columns: 80vw;
-    top: 3rem;
+    grid-template-columns: 90vw;
+    top: 6rem;
     transform: translate(-50%, 0);
   }
 }
