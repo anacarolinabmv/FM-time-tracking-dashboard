@@ -42,6 +42,7 @@ div {
   row-gap: 1.5rem;
   height: 51.8rem;
   overflow: hidden;
+  animation: fadeIn 800ms ease-in-out;
 }
 .card-person {
   grid-row: 1/-1;
@@ -100,6 +101,11 @@ div {
 .timeframes__list-link:visited {
   color: var(--Pale-Blue);
   text-decoration: none;
+}
+.timeframes__list-link.btn--active {
+  color: #fff;
+  font-weight: 500;
+  transition: all 500ms;
 }
 .card-activity__image {
   background-repeat: no-repeat;
@@ -176,4 +182,13 @@ div {
 .card-activity--yellow .card-activity__image {
   background-image: url(images/icon-self-care.svg);
   background-color: var(--Yellow);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

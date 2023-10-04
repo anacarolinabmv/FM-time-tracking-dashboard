@@ -4,6 +4,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const btnDaily = document.getElementById('daily');
 const btnWeekly = document.getElementById('weekly');
 const btnMonthly = document.getElementById('monthly');
+const btns = [btnDaily, btnWeekly, btnMonthly];
 
 const renderCards = function () {
   const cards = [
@@ -43,11 +44,8 @@ const renderTimeframes = async function (timeframe, name) {
   const currentTime = document.querySelectorAll('.card-activity__current span');
   const previousTime = document.querySelectorAll('.card-activity__previous .total');
 
-  console.log(timeframe, name);
-  console.log(timeframeName);
   try {
     const data = await getData();
-    console.log(data);
 
     for (let i = 0; i < data.length; i++) {
       for (let j = 0; j < currentTime.length; j++) {
@@ -62,6 +60,22 @@ const renderTimeframes = async function (timeframe, name) {
 };
 renderTimeframes('daily', 'Yesterday');
 
-btnDaily.addEventListener('click', () => renderTimeframes('daily', 'Yesterday'));
-btnWeekly.addEventListener('click', () => renderTimeframes('weekly', 'Last Week'));
-btnMonthly.addEventListener('click', () => renderTimeframes('monthly', 'Last Month'));
+const removeActive = function (btns) {
+  btns.forEach((btn) => btn.classList.remove('btn--active'));
+};
+
+btnDaily.addEventListener('click', function () {
+  removeActive(btns);
+  this.classList.add('btn--active');
+  renderTimeframes('daily', 'Yesterday');
+});
+btnWeekly.addEventListener('click', function () {
+  removeActive(btns);
+  this.classList.add('btn--active');
+  renderTimeframes('weekly', 'Last Week');
+});
+btnMonthly.addEventListener('click', function () {
+  removeActive(btns);
+  this.classList.add('btn--active');
+  renderTimeframes('monthly', 'Last Month');
+});
