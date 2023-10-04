@@ -6,6 +6,8 @@ const btnWeekly = document.getElementById('weekly');
 const btnMonthly = document.getElementById('monthly');
 const btns = [btnDaily, btnWeekly, btnMonthly];
 
+const btnsContainer = document.querySelector('.timeframes__list');
+
 const renderCards = function () {
   const cards = [
     { color: 'orange', title: 'Work' },
@@ -60,22 +62,16 @@ const renderTimeframes = async function (timeframe, name) {
 };
 renderTimeframes('daily', 'Yesterday');
 
-const removeActive = function (btns) {
-  btns.forEach((btn) => btn.classList.remove('btn--active'));
-};
+//Event Listeners
 
-btnDaily.addEventListener('click', function () {
-  removeActive(btns);
-  this.classList.add('btn--active');
-  renderTimeframes('daily', 'Yesterday');
-});
-btnWeekly.addEventListener('click', function () {
-  removeActive(btns);
-  this.classList.add('btn--active');
-  renderTimeframes('weekly', 'Last Week');
-});
-btnMonthly.addEventListener('click', function () {
-  removeActive(btns);
-  this.classList.add('btn--active');
-  renderTimeframes('monthly', 'Last Month');
+btnsContainer.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('timeframes__list-link')) return;
+
+  btns.forEach((btn) => btn.classList.remove('btn--active'));
+
+  e.target.classList.add('btn--active');
+
+  if (e.target.id === 'daily') renderTimeframes('daily', 'Yesterday');
+  if (e.target.id === 'weekly') renderTimeframes('weekly', 'Last Week');
+  if (e.target.id === 'monthly') renderTimeframes('monthly', 'Last Month');
 });
