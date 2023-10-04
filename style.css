@@ -79,7 +79,7 @@ div {
 
 .card-person__timeframes {
   background-color: var(--Dark-blue);
-  height: 17rem;
+  height: 17.4rem;
   transform: translateY(-1rem);
   border-radius: 0 0 1.5rem 1.5rem;
   padding: 3.2rem;
@@ -140,13 +140,13 @@ div {
   align-items: center;
   justify-content: space-between;
 }
-.card-activity__time {
+.card-activity__current {
   font-size: 5.6rem;
   font-weight: 300;
   line-height: normal;
   margin-top: 2.4rem;
 }
-.card-activity__total {
+.card-activity__previous {
   color: var(--Pale-Blue);
   font-size: 1.5rem;
   font-weight: 400;
