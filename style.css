@@ -20,14 +20,15 @@
 }
 html {
   font-size: 62.5%;
+  height: 100%;
+  min-height: 100vh;
 }
 body {
   background-color: var(--Very-dark-blue);
+  height: 100%;
   min-height: 100vh;
   font-family: 'Rubik', sans-serif;
-}
-div {
-  font-size: 3rem;
+  /* overflow-y: auto; */
 }
 
 .cards-container {
@@ -38,10 +39,9 @@ div {
   display: grid;
   grid-template-columns: repeat(4, 25.5rem);
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 3rem;
+  column-gap: 3rem;
   row-gap: 1.5rem;
-  height: 51.8rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   animation: fadeIn 800ms ease-in-out;
 }
 .card-person {
@@ -107,6 +107,9 @@ div {
   font-weight: 500;
   transition: all 500ms;
 }
+
+/*Activity cards*/
+
 .card-activity__image {
   background-repeat: no-repeat;
   background-position: top -8px right 20px;
@@ -190,5 +193,67 @@ div {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 69.375em /*1110px*/) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 62.5em /*1000px*/) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 56.25em /*900px*/) {
+  .cards-container {
+    grid-template-rows: max-content;
+    grid-template-columns: repeat(3, 25.5rem);
+  }
+  .card-person__timeframes {
+    grid-column: 1/-1;
+    height: 10rem;
+  }
+  .timeframes__list {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(5px);
+  }
+
+  .card-person {
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+  .card-person__info {
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .card-person__picture {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY(-50%);
+  }
+  .card-person__report {
+    margin-left: 13rem;
+  }
+  .card-person__name {
+    margin-left: 13rem;
+  }
+}
+
+@media (max-width: 43.75em /*700px*/) {
+  .cards-container {
+    grid-template-rows: max-content;
+    grid-template-columns: 80vw;
+    top: 3rem;
+    transform: translate(-50%, 0);
   }
 }
